@@ -1,5 +1,3 @@
-class Category < ActiveRecord::Base
+class Category < ApplicationRecord
   #name
-  has_many :items
-
 end

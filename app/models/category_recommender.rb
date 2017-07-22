@@ -1,5 +1,4 @@
 class CategoryRecommender
-
   def initialize(user)
     @user = user
   end

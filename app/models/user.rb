@@ -1,4 +1,4 @@
-class User < ActiveRecord::Base
+class User < ApplicationRecord
   #name
   has_many :items
   has_many :categories, through: :items

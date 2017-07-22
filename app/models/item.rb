@@ -1,3 +1,3 @@
-class Item < ActiveRecord::Base
-  belongs_to :category
+class Item < ApplicationRecord
+  
 end
