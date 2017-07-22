@@ -1,0 +1,3 @@
+class SimilarUsers
+
+end
