@@ -26,6 +26,7 @@ RSpec.describe CategoryRecommender, '#general' do
       item4 = create(:item, name: 'Golf bag', categories: [accs_cat])
       expect(CategoryRecommender.new(user).recommend.count).to be 2
       expect(CategoryRecommender.new(user).recommend).to include(item2, item3)
+      expect(CategoryRecommender.new(user).recommend).to_not include(item1, item4)
     end
   end
 end

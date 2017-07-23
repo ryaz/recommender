@@ -274,3 +274,61 @@ Migrating to CreateUsers (20170722152102)
   [1m[35mSQL (0.2ms)[0m  [1m[34mSELECT "items"."id" AS t0_r0, "items"."name" AS t0_r1, "categories"."id" AS t1_r0, "categories"."name" AS t1_r1 FROM "items" LEFT OUTER JOIN "categories_items" ON "categories_items"."item_id" = "items"."id" LEFT OUTER JOIN "categories" ON "categories"."id" = "categories_items"."category_id" WHERE "categories"."id" IN (10, 9, 8)[0m
   [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "items_users" ON "items"."id" = "items_users"."item_id" WHERE "items_users"."user_id" = ?[0m  [["user_id", 13]]
   [1m[35mSQL (0.2ms)[0m  [1m[34mSELECT "items"."id" AS t0_r0, "items"."name" AS t0_r1, "categories"."id" AS t1_r0, "categories"."name" AS t1_r1 FROM "items" LEFT OUTER JOIN "categories_items" ON "categories_items"."item_id" = "items"."id" LEFT OUTER JOIN "categories" ON "categories"."id" = "categories_items"."category_id" WHERE "categories"."id" IN (10, 9, 8)[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Buddy"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "categories".id FROM "categories" INNER JOIN "categories_items" ON "categories"."id" = "categories_items"."category_id" INNER JOIN "items" ON "categories_items"."item_id" = "items"."id" INNER JOIN "items_users" ON "items"."id" = "items_users"."item_id" WHERE "items_users"."user_id" = ?[0m  [["user_id", 14]]
+  [1m[35mSQL (0.1ms)[0m  [1m[34mSELECT "items"."id" AS t0_r0, "items"."name" AS t0_r1, "categories"."id" AS t1_r0, "categories"."name" AS t1_r1 FROM "items" LEFT OUTER JOIN "categories_items" ON "categories_items"."item_id" = "items"."id" LEFT OUTER JOIN "categories" ON "categories"."id" = "categories_items"."category_id" WHERE 1=0[0m
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "items_users" ON "items"."id" = "items_users"."item_id" WHERE "items_users"."user_id" = ?[0m  [["user_id", 14]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Buddy"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name") VALUES (?)[0m  [["name", "Nike"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name") VALUES (?)[0m  [["name", "Basketball"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "categories" ("name") VALUES (?)[0m  [["name", "Shoes"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "categories" ("name") VALUES (?)[0m  [["name", "Clothing"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "categories" ("name") VALUES (?)[0m  [["name", "Balls"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name") VALUES (?)[0m  [["name", "Addidas"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "categories" ("name") VALUES (?)[0m  [["name", "Accessories"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "items" ("name") VALUES (?)[0m  [["name", "Nike Dunks"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "categories_items" ("category_id", "item_id") VALUES (?, ?)[0m  [["category_id", 17], ["item_id", 9]]
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "categories_items" ("category_id", "item_id") VALUES (?, ?)[0m  [["category_id", 16], ["item_id", 9]]
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "categories_items" ("category_id", "item_id") VALUES (?, ?)[0m  [["category_id", 15], ["item_id", 9]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "items_users" ("item_id", "user_id") VALUES (?, ?)[0m  [["item_id", 9], ["user_id", 15]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "items" ("name") VALUES (?)[0m  [["name", "Nike Street Basketball"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "categories_items" ("category_id", "item_id") VALUES (?, ?)[0m  [["category_id", 19], ["item_id", 10]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "categories_items" ("category_id", "item_id") VALUES (?, ?)[0m  [["category_id", 16], ["item_id", 10]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "categories_items" ("category_id", "item_id") VALUES (?, ?)[0m  [["category_id", 15], ["item_id", 10]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "items" ("name") VALUES (?)[0m  [["name", "Addidas Jersey"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "categories_items" ("category_id", "item_id") VALUES (?, ?)[0m  [["category_id", 18], ["item_id", 11]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "categories_items" ("category_id", "item_id") VALUES (?, ?)[0m  [["category_id", 16], ["item_id", 11]]
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "categories_items" ("category_id", "item_id") VALUES (?, ?)[0m  [["category_id", 20], ["item_id", 11]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "items" ("name") VALUES (?)[0m  [["name", "Golf bag"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "categories_items" ("category_id", "item_id") VALUES (?, ?)[0m  [["category_id", 21], ["item_id", 12]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "categories".id FROM "categories" INNER JOIN "categories_items" ON "categories"."id" = "categories_items"."category_id" INNER JOIN "items" ON "categories_items"."item_id" = "items"."id" INNER JOIN "items_users" ON "items"."id" = "items_users"."item_id" WHERE "items_users"."user_id" = ?[0m  [["user_id", 15]]
+  [1m[35mSQL (0.2ms)[0m  [1m[34mSELECT "items"."id" AS t0_r0, "items"."name" AS t0_r1, "categories"."id" AS t1_r0, "categories"."name" AS t1_r1 FROM "items" LEFT OUTER JOIN "categories_items" ON "categories_items"."item_id" = "items"."id" LEFT OUTER JOIN "categories" ON "categories"."id" = "categories_items"."category_id" WHERE "categories"."id" IN (17, 16, 15)[0m
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "items_users" ON "items"."id" = "items_users"."item_id" WHERE "items_users"."user_id" = ?[0m  [["user_id", 15]]
+  [1m[35mSQL (0.1ms)[0m  [1m[34mSELECT "items"."id" AS t0_r0, "items"."name" AS t0_r1, "categories"."id" AS t1_r0, "categories"."name" AS t1_r1 FROM "items" LEFT OUTER JOIN "categories_items" ON "categories_items"."item_id" = "items"."id" LEFT OUTER JOIN "categories" ON "categories"."id" = "categories_items"."category_id" WHERE "categories"."id" IN (17, 16, 15)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[34mSELECT "items"."id" AS t0_r0, "items"."name" AS t0_r1, "categories"."id" AS t1_r0, "categories"."name" AS t1_r1 FROM "items" LEFT OUTER JOIN "categories_items" ON "categories_items"."item_id" = "items"."id" LEFT OUTER JOIN "categories" ON "categories"."id" = "categories_items"."category_id" WHERE "categories"."id" IN (17, 16, 15)[0m
