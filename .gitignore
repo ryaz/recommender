@@ -1,0 +1,14 @@
+/.bundle
+/.env
+/db/*.sqlite3
+/db/*.sqlite3-journal
+
+/log/*.log
+/log/*tests_result.xml
+tmp/
+/a/*
+/.rvmrc
+/.ruby-gemset
+/.ruby-version
+/.idea
+/.capistrano
