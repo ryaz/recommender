@@ -1,3 +1,4 @@
+require 'rails_helper'
 require 'category_recommender'
 
 RSpec.describe CategoryRecommender, '#general' do
