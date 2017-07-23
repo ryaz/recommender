@@ -4,6 +4,10 @@ class CategoryRecommender
   end
 
   def recommend
-    Item.where(@user.categories)
+    Item.includes(:categories)
+      .where(categories: { id: @user.category_ids.uniq}) - @user.items
+    #find user categories
+    #find items related to categories
+    #exclude already bought by user
   end
 end
