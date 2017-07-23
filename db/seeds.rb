@@ -2,7 +2,7 @@ require 'csv'
 
 %w|category item user|.each do |model_name|
   CSV.open("lib/mini_proj-#{model_name.pluralize}.csv", 'r', col_sep: "\t", headers: true).each do |row|
-    model_name.titleize.constantize.create!(name: row['name'])
+    model_name.titleize.constantize.create!(id: row["#{model_name}_id"], name: row['name'])
   end
 end
 
